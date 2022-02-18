@@ -1,5 +1,5 @@
 import { calculaComissao } from "./calculaComissao";
-import { estruturaComissao } from "../estruturaComissao";
+import { estruturaComissao } from "./estruturaComissao";
 
 export class BalancoService {
   constructor() {}
