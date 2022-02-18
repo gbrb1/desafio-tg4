@@ -1,18 +1,19 @@
 import { Request, Response } from "express";
-import { Erro } from "../../error/error";
 import { BalancoService } from "./balanco.service";
 
 export class BalancoController {
-  constructor(private balancoService: BalancoService, private error: Erro) {}
+  constructor(private balancoService: BalancoService) {}
 
   async handle(request: Request, response: Response): Promise<Response> {
-    const data: any = request.body;
+    const { pedidos }: any = request.body;
 
     try {
-      const resposta = await this.balancoService.execute(data);
+      const resposta = await this.balancoService.execute(pedidos);
       return response.status(201).json(resposta);
     } catch (e) {
-      await this.error.erro(e, response);
+      console.log("LOG DE ERRO:");
+      console.log(e);
+      response.status(e.status).send(e.message);
     }
   }
 }
