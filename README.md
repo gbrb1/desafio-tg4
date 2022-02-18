@@ -16,12 +16,19 @@ git clone https://github.com/gbrb1/desafio-tg4.git
 
 ### 1.3 Rodar Projeto
 
-Use o comando
+Use os comandos
 
 ```sh
 yarn
+```
+
+Depois
+
+```sh
 yarn start
 ```
+
+Única rota da aplicação
 
 ```sh
 http://localhost:3333/api/balanco
